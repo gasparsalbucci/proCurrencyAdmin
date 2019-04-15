@@ -1,4 +1,4 @@
-# SB Admin rewritten in Angular7 and Bootstrap 4
+# ProCurrency Admin in Angular7 and Bootstrap 4
 
 ProCurrency Admin App built using Angular 7 and Bootstrap 4
 
