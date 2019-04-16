@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
     }
 
     onLoggedout() {
-        localStorage.removeItem('isLoggedin');
+        localStorage.removeItem('tk');
     }
 
     changeLang(language: string) {

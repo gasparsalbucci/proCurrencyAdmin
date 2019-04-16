@@ -3,17 +3,22 @@
         <div class="col-md-4">
             <img src="assets/images/logo.png" width="150px" class="user-avatar" />
             <h1>ProCurrency Admin</h1>
-            <form role="form">
+            <form [formGroup]="loginForm" novalidate>
                 <div class="form-content">
                     <div class="form-group">
-                        <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
+                        <input type="text" formControlName="email" class="form-control input-underline input-lg" placeholder="{{ 'Email' | translate }}">
+                        <div class="login_error" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+                            <span *ngIf="!loginForm.controls.email.errors.invalid && loginForm.controls.email.touched">Please enter a valid Email</span>
+                        </div>
                     </div>
-
                     <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}">
+                        <input type="password" formControlName="password" class="form-control input-underline input-lg" placeholder="{{ 'Password' | translate }}">
+                        <div class="login_error" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+                            <span *ngIf="loginForm.controls.password.errors.required || loginForm.controls.password.errors.minlength.actualLength < 8">Password is Required</span>
+                        </div>
                     </div>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()">{{ 'Log in' | translate }}</a>
+                <button class="btn rounded-btn" [disabled]="!isFormValid" (click)="onHandleLoginClick()">{{ 'Log in' | translate }}</button>
                 &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a>
             </form>
