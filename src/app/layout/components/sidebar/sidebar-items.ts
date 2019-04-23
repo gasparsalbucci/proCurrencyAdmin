@@ -5,6 +5,12 @@ export const  SidebarItems = [
         icon: 'fa fa-fw fa-dashboard',
         items: []
     },
+    {
+        label: 'Users',
+        link: '/users',
+        icon: 'fa fa-fw fa-users',
+        items: []
+    }
     // {
     //     label: 'Grid',
     //     link: '/grid',

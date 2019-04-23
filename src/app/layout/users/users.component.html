@@ -1,0 +1,26 @@
+<div class="limiter">
+    <div class="container-table">
+        <div class="wrap-table">
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr class="table-head">
+                            <th class="column1">First Name</th>
+                            <th class="column2">Last Name</th>
+                            <th class="column3">Telephone</th>
+                            <th class="column4">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td class="column1">{{user.firstName}}</td>
+                            <td class="column2">{{user.lastName}}</td>
+                            <td class="column3">{{user.telephone}}</td>
+                            <td class="column4">{{user.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
